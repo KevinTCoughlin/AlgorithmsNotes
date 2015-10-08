@@ -24,12 +24,17 @@ public class LinkedList<T> {
         return (T) temp;
     }
 
-    public void print() {
+    @Override
+    public String toString() {
+        String str = "[";
         Node temp = head;
         while (temp != null) {
-            System.out.print(temp.item.toString() + " ");
+            final String endStr = temp.next != null ? ", " : "";
+            str += temp.item.toString() + endStr;
             temp = temp.next;
         }
+        str += "]";
+        return str;
     }
 
     private static final class Node<T> {
@@ -46,6 +51,16 @@ public class LinkedList<T> {
         linkedList.add("e");
         linkedList.add("f");
         linkedList.remove();
-        linkedList.print();
+        System.out.print(linkedList.toString());
+
+        final java.util.LinkedList<String> list = new java.util.LinkedList<>();
+        list.addFirst("a");
+        list.addFirst("b");
+        list.addFirst("c");
+        list.addFirst("d");
+        list.addFirst("e");
+        list.addFirst("f");
+        list.remove();
+        System.out.print(list.toString());
     }
 }
