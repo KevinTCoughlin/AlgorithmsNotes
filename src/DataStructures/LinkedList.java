@@ -4,7 +4,7 @@ package DataStructures;
  * Simple LinkedList implementation
  *
  * @param <T>
- *     type contained within the {@link LinkedList}.
+ *     type of data contained within the {@link LinkedList}.
  *
  * @author kevincoughlin
  */
