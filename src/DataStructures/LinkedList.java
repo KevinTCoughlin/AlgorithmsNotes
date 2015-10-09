@@ -37,7 +37,7 @@ public class LinkedList<T> {
         return str;
     }
 
-    private static final class Node<T> {
+    private class Node {
         T item;
         Node next;
     }

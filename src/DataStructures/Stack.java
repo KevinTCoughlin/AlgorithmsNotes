@@ -44,7 +44,7 @@ public class Stack<T> {
         return s;
     }
 
-    private static final class Node<T> {
+    private class Node {
         T item;
         Node next;
     }
