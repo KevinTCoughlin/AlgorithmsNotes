@@ -15,14 +15,15 @@ public class Stack<T> {
     public void push(T item) {
         final Node temp = new Node();
         temp.item = item;
-        temp.next = first;
-        first = temp;
-        size++;
+        temp.next = this.first;
+        this.first = temp;
+        this.size++;
     }
 
     public T pop() {
-        final Node oldTemp = first;
-        first = oldTemp.next;
+        final Node oldTemp = this.first;
+        this.first = oldTemp.next;
+        this.size--;
         return (T) oldTemp;
     }
 
@@ -31,13 +32,13 @@ public class Stack<T> {
     }
 
     public boolean isEmpty() {
-        return first == null;
+        return this.first == null;
     }
 
     @Override
     public String toString() {
         String s = "";
-        for (Node item = first; item != null; item = item.next) {
+        for (Node item = this.first; item != null; item = item.next) {
             s += item.item.toString() + " ";
         }
         return s;
