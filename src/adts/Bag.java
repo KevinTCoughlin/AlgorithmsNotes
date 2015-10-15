@@ -1,7 +1,6 @@
-package DataStructures;
+package adts;
 
 import java.util.Iterator;
-import java.util.ListIterator;
 
 /**
  * Simple Stack implementation

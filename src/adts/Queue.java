@@ -1,4 +1,4 @@
-package DataStructures;
+package adts;
 
 public class Queue<T> {
     private int size;

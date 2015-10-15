@@ -1,4 +1,4 @@
-package DataStructures;
+package adts;
 
 /**
  * Simple LinkedList implementation
