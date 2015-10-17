@@ -1,11 +1,12 @@
 package sorts;
 
+
 /**
  * Selection Sort implementation.
  *
  * @author kevincoughlin
  */
-public final class Selection {
+public final class Insertion {
 
     public static void main(String[] args) {
         final Integer[] input = { 3, 7, 4, 9, 5, 2, 6, 1 };
@@ -17,14 +18,14 @@ public final class Selection {
     public static void sort(final Comparable[] a) {
         final int N = a.length;
         if (N <= 1) return;
-        for (int i = 0; i < N; i++) {
-            int min = i;
-            for (int j = i + 1; j < N; j++) {
-                if (less(a[j], a[min])) {
-                    min = j;
-                }
+        for (int i = 1; i < N; i++) {
+            final Comparable item = a[i];
+            int j = i - 1;
+            while (j > -1 && less(item, a[j])) {
+                swap(j + 1, j, a);
+                j--;
             }
-            swap(a, min, i);
+            a[j + 1] = item;
         }
     }
 
@@ -32,10 +33,14 @@ public final class Selection {
         return a.compareTo(b) < 0;
     }
 
-    private static void swap(final Comparable[] a, final int min, final int oldMin) {
-        final Comparable old = a[oldMin];
+    private static void swap(final int oldMin, final int min, final Comparable[] a) {
         a[oldMin] = a[min];
-        a[min] = old;
+    }
+
+    private static void show(final Comparable[] a) {
+        for (final Comparable c : a) {
+            System.out.print(c.toString());
+        }
     }
 
     private static boolean isSorted(final Comparable[] a) {
@@ -45,11 +50,5 @@ public final class Selection {
             }
         }
         return true;
-    }
-
-    private static void show(final Comparable[] a) {
-        for (final Comparable c : a) {
-            System.out.print(c.toString());
-        }
     }
 }
